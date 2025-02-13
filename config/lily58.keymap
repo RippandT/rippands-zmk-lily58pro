@@ -22,15 +22,15 @@
             //                     | ALT  | GUI  | LOWER|  SPACE |  | ENTER | RAISE| BSPC  | GUI   |
 
             bindings = <
-&kp ESC    &kp N1  &kp N2  &kp N3         &kp N4        &kp N5                           &kp N6     &kp N7    &kp N8     &kp N9   &kp N0    &kp GRAVE
-&kp TAB    &kp Q   &kp W   &kp E          &kp R         &kp T                            &kp Y      &kp U     &kp I      &kp O    &kp P     &kp MINUS
-&kp LCTRL  &kp A   &kp S   &kp D          &kp F         &kp G                            &kp H      &kp J     &kp K      &kp L    &kp SEMI  &kp SQT
-&kp LSHFT  &kp Z   &kp X   &kp C          &kp V         &kp B      &kp LBKT    &kp RBKT  &kp N      &kp M     &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
-                           &kp LEFT_META  &kp LEFT_ALT  &kp SPACE  &mo 1       &mo 2     &kp ENTER  &kp BSPC  &kp RGUI
+&kp ESC    &kp N1  &kp N2  &kp N3         &kp N4        &kp N5                            &kp N6  &kp N7    &kp N8     &kp N9   &kp N0    &kp MINUS
+&kp TAB    &kp Q   &kp W   &kp E          &kp R         &kp T                             &kp Y   &kp U     &kp I      &kp O    &kp P     &kp EQUAL
+&kp LCTRL  &kp A   &kp S   &kp D          &kp F         &kp G                             &kp H   &kp J     &kp K      &kp L    &kp SEMI  &kp SQT
+&kp LSHFT  &kp Z   &kp X   &kp C          &kp V         &kp B      &kp LBKT    &kp RBKT   &kp N   &kp M     &kp COMMA  &kp DOT  &kp FSLH  &kp BACKSLASH
+                           &kp LEFT_META  &kp LEFT_ALT  &kp SPACE  &mo 1       &kp ENTER  &mo 2   &kp BSPC  &kp DEL
             >;
         };
 
-        lower_layer {
+        raise_layer {
             // ------------------------------------------------------------------------------------------------------------
             // | BTCLR | BT1 | BT2 |  BT3 |  BT4 |  BT5 |                   |      |       |       |      |       |       |
             // |  F1   |  F2 |  F3 |  F4  |  F5  |  F6  |                   |  F7  |  F8   |  F9   |  F10 |  F11  |  F12  |
@@ -39,17 +39,15 @@
             //                     |      |      |      |        |  |       |      |       |       |
 
             bindings = <
-&bt BT_CLR  &bt BT_SEL 0      &bt BT_SEL 1       &bt BT_SEL 2       &bt BT_SEL 3  &bt BT_SEL 4                    &trans     &trans     &trans     &trans    &trans    &trans
-&kp F1      &kp F2            &kp F3             &kp F4             &kp F5        &kp F6                          &kp F7     &kp F8     &kp F9     &kp F10   &kp F11   &kp F12
-&kp GRAVE   &kp EXCL          &kp AT             &kp HASH           &kp DOLLAR    &kp PRCNT                       &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &kp TILDE
-&trans      &ext_power EP_ON  &ext_power EP_OFF  &ext_power EP_TOG  &trans        &trans        &trans    &trans  &trans     &kp MINUS  &kp PLUS   &kp LBRC  &kp RBRC  &kp PIPE
-                                                 &trans             &trans        &trans        &trans    &trans  &trans     &trans     &trans
+&kp GRAVE  &kp F1  &kp F2    &kp F3            &kp F4             &kp F5                                &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
+&kp F6     &kp F7  &kp F8    &kp F9            &kp F10            &kp F11                               &trans      &trans        &trans        &kp UP        &trans        &trans
+&trans     &trans  &trans    &kp UP            &trans             &kp LG(GRAVE)                         &trans      &trans        &kp LEFT      &kp DOWN      &kp RIGHT     &trans
+&trans     &trans  &kp LEFT  &kp DOWN          &kp RIGHT          &trans             &kp F12    &trans  &trans      &trans        &trans        &trans        &trans        &trans
+                             &ext_power EP_ON  &ext_power EP_OFF  &ext_power EP_TOG  &trans     &trans  &trans      &trans        &trans
             >;
-
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
-        raise_layer {
+        lower_layer {
             // ------------------------------------------------------------------------------------------------------------
             // |       |     |     |      |      |      |                   |      |       |       |      |       |       |
             // |   `   |  1  |  2  |  3   |  4   |  5   |                   |  6   |   7   |   8   |  9   |   0   |       |
@@ -58,14 +56,12 @@
             //                     |      |      |      |        |  |       |      |       |       |
 
             bindings = <
-&trans     &trans  &trans  &trans   &trans   &trans                     &trans       &trans     &trans     &trans    &trans     &trans
-&kp GRAVE  &kp N1  &kp N2  &kp N3   &kp N4   &kp N5                     &kp N6       &kp N7     &kp N8     &kp N9    &kp N0     &trans
-&kp F1     &kp F2  &kp F3  &kp F4   &kp F5   &kp F6                     &trans       &kp LEFT   &kp DOWN   &kp UP    &kp RIGHT  &trans
-&kp F7     &kp F8  &kp F9  &kp F10  &kp F11  &kp F12  &trans    &trans  &kp KP_PLUS  &kp MINUS  &kp EQUAL  &kp LBKT  &kp RBKT   &kp BSLH
-                           &trans   &trans   &trans   &trans    &trans  &trans       &trans     &trans
+&trans  &kp F13  &kp F14  &kp F15  &kp F16  &kp F17                    &trans  &trans           &trans           &trans           &trans           &trans
+&trans  &kp F18  &kp F19  &kp F20  &kp F21  &kp F22                    &trans  &kp KP_PLUS      &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_MULTIPLY
+&trans  &kp F23  &kp F24  &trans   &trans   &trans                     &trans  &kp KP_SUBTRACT  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_DIVIDE
+&trans  &trans   &trans   &trans   &trans   &trans   &trans    &trans  &trans  &trans           &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_ENTER
+                          &trans   &trans   &trans   &trans    &trans  &trans  &kp KP_DOT       &kp KP_NUMBER_0
             >;
-
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
     };
 };
