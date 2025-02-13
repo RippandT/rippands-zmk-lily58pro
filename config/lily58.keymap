@@ -49,11 +49,11 @@
             //                     |      |      |      |        |  |       |      |       |       |
 
             bindings = <
-&kp F1         &kp F2         &kp F3     &kp F4                   &kp F5     &kp F6                                  &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1       &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-&kp F7         &kp F8         &kp F9     &kp F10                  &kp F11    &kp F12                                 &kp HOME    &kp END       &trans             &kp UP        &trans        &kp INS
-&kp LC(C)      &kp LC(V)      &kp LC(X)  &kp UP                   &kp LC(A)  &kp LG(GRAVE)                           &kp PG_UP   &trans        &kp LEFT           &kp DOWN      &kp RIGHT     &trans
-&kp LS(LC(C))  &kp LS(LC(V))  &kp LEFT   &kp DOWN                 &kp RIGHT  &kp GRAVE      &kp LS(GRAVE)    &trans  &kp PG_DN   &trans        &trans             &trans        &trans        &trans
-                                         &kp LS(LG(PRINTSCREEN))  &kp TILDE  &trans         &trans           &trans  &tog 1      &tog 0        &ext_power EP_TOG
+&kp F1         &kp F2         &kp F3     &kp F4                   &kp F5     &kp F6                                             &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
+&kp F7         &kp F8         &kp F9     &kp F10                  &kp F11    &kp F12                                            &kp INS     &trans        &kp HOME      &kp UP        &kp END       &trans
+&kp LC(C)      &kp LC(V)      &kp LC(X)  &kp UP                   &kp LC(A)  &kp LG(GRAVE)                                      &trans      &trans        &kp LEFT      &kp DOWN      &kp RIGHT     &kp PG_UP
+&kp LS(LC(C))  &kp LS(LC(V))  &kp LEFT   &kp DOWN                 &kp RIGHT  &kp GRAVE      &kp LS(GRAVE)    &ext_power EP_TOG  &trans      &kp RALT      &trans        &trans        &trans        &kp PG_DN
+                                         &kp LS(LG(PRINTSCREEN))  &kp TILDE  &trans         &trans           &tog 0             &tog 1      &kp RSHFT     &kp RCTRL
             >;
         };
 
