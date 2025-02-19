@@ -49,11 +49,11 @@
             //                     |      |      |      |        |  |       |      |       |       |
 
             bindings = <
-&kp F1      &kp F2         &kp F3     &kp F4                   &kp F5     &kp F6                                  &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-&kp F7      &kp F8         &kp F9     &kp F10                  &kp F11    &kp F12                                 &kp INS     &trans        &kp HOME      &kp UP        &kp END       &trans
-&kp LC(X)   &kp LC(C)      &kp LC(A)  &kp UP                   &trans     &kp LG(GRAVE)                           &trans      &trans        &kp LEFT      &kp DOWN      &kp RIGHT     &kp PG_UP
-&kp LSHIFT  &kp LS(LC(V))  &kp LEFT   &kp DOWN                 &kp RIGHT  &kp GRAVE      &kp LS(GRAVE)    &trans  &trans      &trans        &trans        &trans        &trans        &kp PG_DN
-                                      &kp LS(LG(PRINTSCREEN))  &trans     &tog 1         &tog 1           &trans  &kp RALT    &kp RSHFT     &kp RCTRL
+&kp F1      &kp F2     &kp F3     &kp F4                   &kp F5     &kp F6                                  &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
+&kp F7      &kp F8     &kp F9     &kp F10                  &kp F11    &kp F12                                 &kp INS     &trans        &kp HOME      &kp UP        &kp END       &trans
+&kp LC(X)   &kp LC(C)  &kp LC(A)  &kp UP                   &trans     &kp LG(GRAVE)                           &trans      &trans        &kp LEFT      &kp DOWN      &kp RIGHT     &kp PG_UP
+&kp LSHIFT  &kp LC(V)  &kp LEFT   &kp DOWN                 &kp RIGHT  &kp GRAVE      &kp LS(GRAVE)    &trans  &trans      &trans        &trans        &trans        &trans        &kp PG_DN
+                                  &kp LS(LG(PRINTSCREEN))  &trans     &tog 1         &tog 1           &trans  &kp RALT    &kp RSHFT     &kp RCTRL
             >;
         };
 
