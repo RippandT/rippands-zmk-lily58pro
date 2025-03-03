@@ -8,21 +8,16 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/outputs.h>
 
 / {
     keymap {
         compatible = "zmk,keymap";
 
         default_mode {
-            // ------------------------------------------------------------------------------------------------------------
-            // |  ESC  |  1  |  2  |  3   |  4   |  5   |                   |  6   |  7    |  8    |  9   |   0   |   `   |
-            // |  TAB  |  Q  |  W  |  E   |  R   |  T   |                   |  Y   |  U    |  I    |  O   |   P   |   -   |
-            // |  CTRL |  A  |  S  |  D   |  F   |  G   |                   |  H   |  J    |  K    |  L   |   ;   |   '   |
-            // | SHIFT |  Z  |  X  |  C   |  V   |  B   |   "["  |  |  "]"  |  N   |  M    |  ,    |  .   |   /   | SHIFT |
-            //                     | ALT  | GUI  | LOWER|  SPACE |  | ENTER | RAISE| BSPC  | GUI   |
 
             bindings = <
-&kp ESC    &kp N1  &kp N2  &kp N3         &kp N4        &kp N5                          &kp N6  &kp N7    &kp N8     &kp N9   &kp N0    &kp MINUS
+&gresc     &kp N1  &kp N2  &kp N3         &kp N4        &kp N5                          &kp N6  &kp N7    &kp N8     &kp N9   &kp N0    &kp MINUS
 &kp TAB    &kp Q   &kp W   &kp E          &kp R         &kp T                           &kp Y   &kp U     &kp I      &kp O    &kp P     &kp EQUAL
 &kp LCTRL  &kp A   &kp S   &kp D          &kp F         &kp G                           &kp H   &kp J     &kp K      &kp L    &kp SEMI  &kp SQT
 &kp LSHFT  &kp Z   &kp X   &kp C          &kp V         &kp B   &kp LBKT     &kp RBKT   &kp N   &kp M     &kp COMMA  &kp DOT  &kp FSLH  &kp BACKSLASH
@@ -32,7 +27,7 @@
 
         gaming_mode {
             bindings = <
-&kp ESC    &kp N1  &kp N2  &kp N3         &kp N4        &kp N5                            &kp N6  &kp N7    &kp N8     &kp N9   &kp N0    &kp MINUS
+&gresc     &kp N1  &kp N2  &kp N3         &kp N4        &kp N5                            &kp N6  &kp N7    &kp N8     &kp N9   &kp N0    &kp MINUS
 &kp TAB    &kp Q   &kp W   &kp E          &kp R         &kp T                             &kp Y   &kp U     &kp I      &kp O    &kp P     &kp EQUAL
 &kp LSHFT  &kp A   &kp S   &kp D          &kp F         &kp G                             &kp H   &kp J     &kp K      &kp L    &kp SEMI  &kp SQT
 &kp LCTRL  &kp Z   &kp X   &kp C          &kp V         &kp B      &kp LBKT    &kp RBKT   &kp N   &kp M     &kp COMMA  &kp DOT  &kp FSLH  &kp BACKSLASH
@@ -41,36 +36,24 @@
         };
 
         raise_layer {
-            // ------------------------------------------------------------------------------------------------------------
-            // | BTCLR | BT1 | BT2 |  BT3 |  BT4 |  BT5 |                   |      |       |       |      |       |       |
-            // |  F1   |  F2 |  F3 |  F4  |  F5  |  F6  |                   |  F7  |  F8   |  F9   |  F10 |  F11  |  F12  |
-            // |   `   |  !  |  @  |  #   |  $   |  %   |                   |  ^   |  &    |  *    |  (   |   )   |   ~   |
-            // |       |     |     |      |      |      |        |  |       |      |  _    |  +    |  {   |   }   |  "|"  |
-            //                     |      |      |      |        |  |       |      |       |       |
 
             bindings = <
-&kp F1      &kp F2     &kp F3     &kp F4                   &kp F5     &kp F6                                  &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-&kp F7      &kp F8     &kp F9     &kp F10                  &kp F11    &kp F12                                 &kp INS     &trans        &kp HOME      &kp UP        &kp END       &trans
-&kp LC(X)   &kp LC(C)  &kp LC(A)  &kp UP                   &trans     &kp LG(GRAVE)                           &trans      &trans        &kp LEFT      &kp DOWN      &kp RIGHT     &kp PG_UP
-&kp LSHIFT  &kp LC(V)  &kp LEFT   &kp DOWN                 &kp RIGHT  &kp GRAVE      &kp LS(GRAVE)    &trans  &trans      &trans        &trans        &trans        &trans        &kp PG_DN
-                                  &kp LS(LG(PRINTSCREEN))  &trans     &tog 1         &tog 1           &trans  &kp RALT    &kp RSHFT     &kp RCTRL
+&kp F1      &kp F2     &kp F3     &kp F4                   &kp F5     &kp F6                                       &out OUT_TOG  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
+&kp F7      &kp F8     &kp F9     &kp F10                  &kp F11    &kp F12                                      &trans        &kp HOME      &kp UP        &kp END       &kp RSHFT     &trans
+&kp LC(X)   &kp LC(C)  &kp LC(A)  &kp UP                   &trans     &kp LG(GRAVE)                                &kp PG_UP     &kp LEFT      &kp DOWN      &kp RIGHT     &kp RCTRL     &trans
+&kp LSHIFT  &kp LC(V)  &kp LEFT   &kp DOWN                 &kp RIGHT  &kp GRAVE      &kp CAPS         &bt BT_CLR   &kp PG_DN     &trans        &trans        &trans        &trans        &trans
+                                  &kp LG(PRINTSCREEN)      &trans     &tog 1         &tog 1           &trans       &kp RALT      &trans        &trans 
             >;
         };
 
         lower_layer {
-            // ------------------------------------------------------------------------------------------------------------
-            // |       |     |     |      |      |      |                   |      |       |       |      |       |       |
-            // |   `   |  1  |  2  |  3   |  4   |  5   |                   |  6   |   7   |   8   |  9   |   0   |       |
-            // |   F1  |  F2 |  F3 |  F4  |  F5  |  F6  |                   |      |   <-  |   v   |  ^   |  ->   |       |
-            // |   F7  |  F8 |  F9 |  F10 |  F11 |  F12 |        |  |       |  +   |   -   |   =   |  [   |   ]   |   \   |
-            //                     |      |      |      |        |  |       |      |       |       |
 
             bindings = <
-&kp F13  &kp F14  &kp F15  &kp F16  &kp F17  &kp F18                               &kp INS    &trans           &kp HOME         &kp END          &trans           &trans
-&kp F19  &kp F20  &kp F21  &kp F22  &kp F23  &kp F24                               &trans     &kp KP_PLUS      &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_MULTIPLY
-&trans   &trans   &trans   &trans   &trans   &trans                                &kp PG_UP  &kp KP_SUBTRACT  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_DIVIDE
-&trans   &trans   &trans   &trans   &trans   &trans   &ext_power EP_TOG    &trans  &kp PG_DN  &kp KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_DOT
-                           &trans   &trans   &tog 0   &tog 1               &trans  &trans     &trans           &kp KP_ENTER
+&kp F13  &kp F14  &kp F15  &kp F16  &kp F17  &kp F18                               &kp INS    &trans           &kp HOME         &kp END          &trans           &kp KP_SUBTRACT
+&kp F19  &kp F20  &kp F21  &kp F22  &kp F23  &kp F24                               &trans     &kp KP_MULTIPLY  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_PLUS
+&trans   &trans   &trans   &trans   &trans   &trans                                &kp PG_UP  &kp KP_DIVIDE    &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_DOT
+&trans   &trans   &trans   &trans   &trans   &trans   &ext_power EP_TOG    &trans  &kp PG_DN  &kp KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_ENTER
+                           &trans   &trans   &tog 0   &tog 1               &trans  &trans     &trans           &trans
             >;
         };
     };
